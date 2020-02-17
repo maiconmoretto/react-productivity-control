@@ -13,6 +13,29 @@ class App extends Component {
     showTasks: true
   };
 
+  numberChangehandler = (event, id) => {
+    const taskIndex = this.state.tasks.findIndex(p => {
+      return p.id === id;
+    });
+
+    const task = {
+      ...this.state.tasks[taskIndex]
+    };
+
+    task.number = event.target.value;
+
+    const tasks = [...this.state.tasks];
+    tasks[taskIndex] = task;
+
+    this.setState({ tasks: tasks });
+  }
+
+  deleteTaskHandler = taskIndex => {
+    const tasks = this.state.tasks.slice();
+    tasks.splice(taskIndex, 1);
+    this.setState({ tasks: tasks });
+  };
+
   render() {
     let tasks = null;
 
@@ -21,7 +44,12 @@ class App extends Component {
         <div>
           {
             this.state.tasks.map((task, index) => {
-              return <Task dueDate={task.dueDate} number={task.number} />;
+              return <Task key={task.id}
+              dueDate={task.dueDate} 
+              number={task.number} 
+              click={() => this.deleteTaskHandler(index)}
+              changed={(event)  => this.numberChangehandler(event, task.id)}
+              />;
             })
           }
         </div>
