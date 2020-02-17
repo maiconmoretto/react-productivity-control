@@ -19,15 +19,18 @@ class App extends Component {
     if (this.state.showTasks) {
       tasks = (
         <div>
-          {this.state.tasks.map((task, index) => {
-            return <Task dueDate={task.dueDate} number={task.number} />;
-          })}
+          {
+            this.state.tasks.map((task, index) => {
+              return <Task dueDate={task.dueDate} number={task.number} />;
+            })
+          }
         </div>
       );
     }
 
     return (
       <div className="App">
+        <h1>List of tasks:</h1>
         {tasks}
       </div>
     );
