@@ -7,7 +7,8 @@ const task = props => {
       <p onClick={props.click}> i am {props.number}, and date {props.dueDate}</p>
       <p>
         Task number: <input type="number" name="taskNumber" onChange={props.changed} value={props.number} />
-        <span></span> Due Date: <input type="string" name="date"/>
+        <span></span> 
+        Due Date: <input type="string" name="date"/>
       </p>
     </div>
   );
