@@ -18,8 +18,20 @@ const TaskTable = props => (
             <td>{task.dueDate}</td>
             <td>{task.finishedDate}</td>
             <td>
-              <button className="button muted-button">Edit</button>
-              <button className="button muted-button">Delete</button>
+              <button
+                onClick={() => {
+                  props.editRow(task);
+                }}
+                className="button muted-button"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => props.deleteTask(task.id)}
+                className="button muted-button"
+              >
+                Delete
+              </button>
             </td>
           </tr>
         ))
