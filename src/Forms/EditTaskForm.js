@@ -24,6 +24,8 @@ const EditTaskForm = props => {
       <input type="text" name="number" value={task.number} onChange={handleInputChange} />
       <label>Due date</label>
       <input type="text" name="dueDate" value={task.dueDate} onChange={handleInputChange} />
+      <label>Finished date</label>
+      <input type="text" name="finishedDate" value={task.finishedDate} onChange={handleInputChange} />
       <button>Update task</button>
       <button onClick={() => props.setEditing(false)} className="button muted-button">
         Cancel

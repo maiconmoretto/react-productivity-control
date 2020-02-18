@@ -5,9 +5,9 @@ import EditTaskForm from "./Forms/EditTaskForm";
 
 const App = () => {
   const tasksData = [
-    { id: 1, dueDate: "01/01/01", number: 123 },
-    { id: 2, dueDate: "02/02/02", number: 234 },
-    { id: 3, dueDate: "03/03/03", number: 345 }
+    { id: 1, dueDate: "01/01/01", number: 123, finishedDate: "01/02/01" },
+    { id: 2, dueDate: "02/02/02", number: 234, finishedDate: "02/03/02" },
+    { id: 3, dueDate: "03/03/03", number: 345, finishedDate: "03/04/01" }
   ];
 
   const [tasks, setTasks] = useState(tasksData);
@@ -16,14 +16,14 @@ const App = () => {
     task.id = tasks.length + 1;
     setTasks([...tasks, task]);
   };
-  const initialFormState = { id: null, nnumber: "", dueDate: "" };
+  const initialFormState = { id: null, nnumber: "", dueDate: "", finishedDate: "" };
   const [currentTask, setCurrentTask] = useState(initialFormState);
 
   const [editing, setEditing] = useState(false);
   const editRow = task => {
     setEditing(true);
 
-    setCurrentTask({ id: task.id, number: task.number, dueDate: task.dueDate });
+    setCurrentTask({ id: task.id, number: task.number, dueDate: task.dueDate, finishedDate: task.finishedDate });
   };
   const deleteTask = id => {
     setTasks(tasks.filter(task => task.id !== id));
