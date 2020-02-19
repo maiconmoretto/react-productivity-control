@@ -14,7 +14,9 @@ const AddTaskForm = props => {
     <form
       onSubmit={event => {
         event.preventDefault()
-        if (!task.number || !task.dueDate) return
+        if (!task.number || !task.dueDate || !task.finishedDate) {
+          return
+        } 
 
         props.addTask(task)
         setTask(initialFormState)
@@ -27,7 +29,7 @@ const AddTaskForm = props => {
       <label>Finished date</label>
       <input type="text" name="finishedDate" value={task.finishedDate} onChange={handleInputChange} />
       <label>Diff in Days</label>
-      <input type="text" name="diffDays" value={task.finishedDate} onChange={handleInputChange} />
+      <input type="text" name="diffDays" value={task.diffDays} onChange={handleInputChange} />
       <button>Add new task</button>
     </form>
   )

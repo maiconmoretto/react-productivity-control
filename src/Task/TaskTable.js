@@ -12,7 +12,7 @@ const TaskTable = props => (
       </tr>
     </thead>
     <tbody>
-      {props.tasks.length > 0 ? (
+      {props.tasks ? (
         props.tasks.map(task => (
           <tr key={task.id}>
             <td>{task.number}</td>
@@ -39,7 +39,7 @@ const TaskTable = props => (
         ))
       ) : (
         <tr>
-          <td colSpan={3}>No tasks</td>
+          <td colSpan={5}>No tasks</td>
         </tr>
       )}
     </tbody>
