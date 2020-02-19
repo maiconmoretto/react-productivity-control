@@ -1,13 +1,14 @@
 import React from "react";
 
 const TaskTable = props => (
-  <table>
+  <table className="taskTable">
     <thead>
       <tr>
         <th>Number</th>
         <th>Due date</th>
         <th>Finished date</th>
-        <th>Actions</th>
+        <th>Result</th>
+        <th>Diff in Days</th>
       </tr>
     </thead>
     <tbody>
@@ -17,6 +18,7 @@ const TaskTable = props => (
             <td>{task.number}</td>
             <td>{task.dueDate}</td>
             <td>{task.finishedDate}</td>
+            <td>{task.diffDays}</td>
             <td>
               <button
                 onClick={() => {

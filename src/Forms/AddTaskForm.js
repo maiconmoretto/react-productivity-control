@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const AddTaskForm = props => {
-  const initialFormState = { id: null, number: '', dueDate: '', finishedDate: '' }
+  const initialFormState = { id: null, number: '', dueDate: '', finishedDate: '', diffDays: 0 }
   const [task, setTask] = useState(initialFormState)
 
   const handleInputChange = event => {
@@ -26,6 +26,8 @@ const AddTaskForm = props => {
       <input type="text" name="dueDate" value={task.dueDate} onChange={handleInputChange} />
       <label>Finished date</label>
       <input type="text" name="finishedDate" value={task.finishedDate} onChange={handleInputChange} />
+      <label>Diff in Days</label>
+      <input type="text" name="diffDays" value={task.finishedDate} onChange={handleInputChange} />
       <button>Add new task</button>
     </form>
   )
