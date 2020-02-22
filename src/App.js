@@ -24,7 +24,7 @@ const App = () => {
     id: null,
     nnumber: "",
     dueDate: "",
-    finishedDate: "",
+    diifDaysfinishedDate: "",
     diffDays: 0
   };
   const [currentTask, setCurrentTask] = useState(initialFormState);
@@ -37,7 +37,8 @@ const App = () => {
       id: task.id,
       number: task.number,
       dueDate: task.dueDate,
-      finishedDate: task.finishedDate
+      finishedDate: task.finishedDate,
+      diffDays: task.diffDays
     });
   };
 

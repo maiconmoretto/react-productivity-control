@@ -1,5 +1,5 @@
 .delete-button {
-  width: 50%;
+  width: 49%;
   background-color: rgb(180, 65, 65);
   color: white;
   padding: 14px 20px;
@@ -10,7 +10,7 @@
 }
 
 .edit-button {
-  width: 50%;
+  width: 49%;
   background-color:rgb(95, 95, 173);
   color: white;
   padding: 14px 20px;

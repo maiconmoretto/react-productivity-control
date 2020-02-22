@@ -29,11 +29,11 @@ const AddTaskForm = props => {
       <br></br>
       <label>Due date</label>
       <br></br>
-      <input type="text" name="dueDate" value={task.dueDate} onChange={handleInputChange} />
+      <input type="date" name="dueDate" value={task.dueDate} onChange={handleInputChange} />
       <br></br>
       <label>Finished date</label>
       <br></br>
-      <input type="text" name="finishedDate" value={task.finishedDate} onChange={handleInputChange} />
+      <input type="date" name="finishedDate" value={task.finishedDate} onChange={handleInputChange} />
       <br></br>
       <label>Diff in Days</label>
       <br></br>
