@@ -1,0 +1,10 @@
+.cancel-button {
+    width: 50%;
+    background-color:rgb(180, 65, 65);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

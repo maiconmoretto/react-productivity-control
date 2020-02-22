@@ -4,24 +4,22 @@ import AddTaskForm from "./Forms/AddTaskForm";
 import EditTaskForm from "./Forms/EditTaskForm";
 
 const App = () => {
-  let tasksData = [];
+  let tasksData = null;
   
   tasksData = JSON.parse(localStorage.getItem("tasks"));
   const [tasks, setTasks] = useState(tasksData);
 
+  localStorage.setItem("tasks", JSON.stringify(tasks));
   const addTask = task => {
-    debugger
     if (tasks) {
-      task.id = tasks.length;
+      task.id = tasks.length + 1;
       setTasks([...tasks, task]);
-      localStorage.setItem("tasks", JSON.stringify(tasks));
     } else {
       task.id = 1;
       setTasks([task]);
-      localStorage.setItem("tasks", JSON.stringify(tasks));
     }  
- 
   };
+
   const initialFormState = {
     id: null,
     nnumber: "",
@@ -42,15 +40,15 @@ const App = () => {
       finishedDate: task.finishedDate
     });
   };
+
   const deleteTask = id => {
     setTasks(tasks.filter(task => task.id !== id));
   };
+
   const updateTask = (id, updatedTask) => {
     setEditing(false);
 
     setTasks(tasks.map(task => (task.id === id ? updatedTask : task)));
-
-    localStorage.setItem("tasks", JSON.stringify([tasks]));
   };
 
   return (
@@ -59,7 +57,7 @@ const App = () => {
         <div className="flex-large">
           {editing ? (
             <div>
-              <h2>Edit user</h2>
+              <h2>Edit task</h2>
               <EditTaskForm
                 editing={editing}
                 setEditing={setEditing}

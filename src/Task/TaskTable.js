@@ -1,4 +1,5 @@
 import React from "react";
+import './TaskTable.css';
 
 const TaskTable = props => (
   <table className="taskTable">
@@ -24,13 +25,13 @@ const TaskTable = props => (
                 onClick={() => {
                   props.editRow(task);
                 }}
-                className="button muted-button"
+                className="edit-button"
               >
                 Edit
               </button>
               <button
                 onClick={() => props.deleteTask(task.id)}
-                className="button muted-button"
+                className="delete-button"
               >
                 Delete
               </button>

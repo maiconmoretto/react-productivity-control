@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './EditTask.css'
 
 const EditTaskForm = props => {
   const [task, setTask] = useState(props.currentTask)
@@ -21,17 +22,24 @@ const EditTaskForm = props => {
       }}
     >
       <label>Number</label>
+      <br></br>
       <input type="text" name="number" value={task.number} onChange={handleInputChange} />
+      <br></br>
       <label>Due date</label>
+      <br></br>
       <input type="text" name="dueDate" value={task.dueDate} onChange={handleInputChange} />
+      <br></br>
       <label>Finished date</label>
+      <br></br>
       <input type="text" name="finishedDate" value={task.finishedDate} onChange={handleInputChange} />
+      <br></br>
       <label>Diff in Days</label>
+      <br></br>
       <input type="text" name="diffDays" value={task.diifDays} onChange={handleInputChange} />
-      <button>Update task</button>
-      <button onClick={() => props.setEditing(false)} className="button muted-button">
-        Cancel
-      </button>
+      <br></br>
+      <input type="submit" value="Save" />
+      <br></br>
+      <button onClick={() => props.setEditing(false)} className="cancel-button" >Cancel</button>
     </form>
   )
 }
