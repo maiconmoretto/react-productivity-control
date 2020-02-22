@@ -23,7 +23,7 @@ const EditTaskForm = props => {
     >
       <label>Number</label>
       <br></br>
-      <input type="text" name="number" value={task.number} onChange={handleInputChange} />
+      <input type="number" name="number" value={task.number} onChange={handleInputChange} />
       <br></br>
       <label>Due date</label>
       <br></br>

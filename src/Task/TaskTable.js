@@ -8,8 +8,8 @@ const TaskTable = props => (
         <th>Number</th>
         <th>Due date</th>
         <th>Finished date</th>
-        <th>Result</th>
         <th>Diff in Days</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
